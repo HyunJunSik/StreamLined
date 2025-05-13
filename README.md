@@ -47,12 +47,10 @@ You can download pretrained models here:
 Our model achieves the following performance on :
 
 ### [Image Classification on ImageNet]
-| CIFAR-100 based Experiments|     | | | | | | 
-| Teacher    | ResNet56 | ResNet110 | ResNet32x4 | WRN-40-2     | WRN-40-2     | VGG13 |
 |------------|----------|-----------|------------|--------------|--------------|--------|
+| Teacher    | ResNet56 | ResNet110 | ResNet32x4 | WRN-40-2     | WRN-40-2     | VGG13 |
 |            | 71.22    | 73.06     | 77.34      | 75.24        | 75.24        | 72.00  |
 | Student    | ResNet20 | ResNet32 | ResNet8x4   | WRN-16-2     | WRN-40-1     | VGG13  |
-|------------|----------|-----------|------------|--------------|--------------|--------|
 |            | 65.79    | 67.92     | 72.48      | 71.12        | 69.54        | 68.19  |
 | **Feature-based KD** |          |           |            |              |              |        |
 | FitNet     | 68.51    | 71.27     | 73.79      | 72.51        | 71.85        | 71.75  |
@@ -67,6 +65,7 @@ Our model achieves the following performance on :
 | MLKD       | 71.05    | 73.75     | 76.75      | 75.88        | 75.45        | 72.42  |
 | SDD        | 68.22    | 70.97     | 74.83      | 73.33        | 72.94        | 73.09  |
 | **Ours**   | **71.34**| **74.26** | **77.21**  | **76.42**    | **75.56**    | **74.10** |
+|------------|----------|-----------|------------|--------------|--------------|--------|
 
 
 ## Contributing
