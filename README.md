@@ -2,7 +2,7 @@
 
 This repository is the official implementation of [Streamlined Knowledge Distillation]
 
->📋  Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
+![propose](https://github.com/user-attachments/assets/f9fae55f-be82-4a20-a61e-5cdd3a2238ce)
 
 ## Requirements
 
