@@ -47,8 +47,9 @@ You can download pretrained models here:
 Our model achieves the following performance on :
 
 ### [Image Classification on ImageNet]
-|------------|----------|-----------|------------|--------------|--------------|--------|
+
 | Teacher    | ResNet56 | ResNet110 | ResNet32x4 | WRN-40-2     | WRN-40-2     | VGG13 |
+|------------|----------|-----------|------------|--------------|--------------|--------|
 |            | 71.22    | 73.06     | 77.34      | 75.24        | 75.24        | 72.00  |
 | Student    | ResNet20 | ResNet32 | ResNet8x4   | WRN-16-2     | WRN-40-1     | VGG13  |
 |            | 65.79    | 67.92     | 72.48      | 71.12        | 69.54        | 68.19  |
