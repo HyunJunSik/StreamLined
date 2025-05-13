@@ -47,7 +47,7 @@ You can download pretrained models here:
 Our model achieves the following performance on :
 
 ### [Image Classification on ImageNet]
-
+| CIFAR-100 based Experiments|
 | Teacher     | ResNet56 | ResNet110 | ResNet32x4 | WRN-40-2  | WRN-40-2  | VGG13 |
 |------------|----------|-----------|------------|--------------|--------------|--------|
 |            | 71.22    | 73.06     | 77.34      | 75.24        | 75.24        | 72.00  |
