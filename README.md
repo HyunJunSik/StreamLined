@@ -9,21 +9,22 @@ While the internal structure (e.g., the mdistiller folder) may differ from the o
 
 ## Directory Setup
 Before training, please create the following directories under the CIFAR-100/Utils folder
-
+```
 CIFAR-100/Utils/
 ├── model_train_log
 ├── model_distillation_pth
 ├── distiller_train_log
 ├── SDD_model_pth
 ├── SDD_train_log
-
+```
+```
 ImageNet/Utils/
 ├── model_train_log
 ├── model_distillation_pth
 ├── distiller_train_log
 ├── SDD_model_pth
 ├── SDD_train_log
-
+```
 These folders are required to stor training logs and model checkpoints.
 
 ## Requirements
@@ -37,10 +38,10 @@ pip install -r requirements.txt
 ## Training
 
 Trained models are saved under the following directories:
-
+```
 - CIFAR-100/Utils/model_distillation_pth
 - CIFAR-100/Utils/SDD_model_pth
-
+```
 Please configure paths accordingly before running training.
 For CIFAR-100:
 ```train
