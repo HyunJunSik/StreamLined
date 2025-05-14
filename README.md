@@ -64,7 +64,7 @@ python test.py
 
 Our model achieves the following performance on :
 
-### [Image Classification on ImageNet]
+### [Image Classification on CIFAR-100 under homogeneous architectures]
 
 | Teacher    | ResNet56 | ResNet110 | ResNet32x4 | WRN-40-2     | WRN-40-2     | VGG13 |
 |------------|----------|-----------|------------|--------------|--------------|--------|
