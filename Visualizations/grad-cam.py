@@ -12,9 +12,7 @@ from pytorch_grad_cam.utils.image import show_cam_on_image, preprocess_image
 from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
 import numpy as np
 import matplotlib.pyplot as plt
-import habana_frameworks.torch.core as htcore
-import habana_frameworks.torch.utils.debug as htdebug
-
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 if __package__ is None:
     sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))

@@ -4,6 +4,28 @@ This repository is the official implementation of [Streamlined Knowledge Distill
 
 ![propose](https://github.com/user-attachments/assets/f9fae55f-be82-4a20-a61e-5cdd3a2238ce)
 
+We refactored our code based on [MDistiller](https://github.com/megvii-research/mdistiller).
+While the internal structure (e.g., the mdistiller folder) may differ from the original repository, the functionality remains consistent.
+
+## Directory Setup
+Before training, please create the following directories under the CIFAR-100/Utils folder
+
+CIFAR-100/Utils/
+├── model_train_log
+├── model_distillation_pth
+├── distiller_train_log
+├── SDD_model_pth
+├── SDD_train_log
+
+ImageNet/Utils/
+├── model_train_log
+├── model_distillation_pth
+├── distiller_train_log
+├── SDD_model_pth
+├── SDD_train_log
+
+These folders are required to stor training logs and model checkpoints.
+
 ## Requirements
 
 To install requirements:
@@ -12,35 +34,30 @@ To install requirements:
 pip install -r requirements.txt
 ```
 
->📋  Describe how to set up the environment, e.g. pip/conda/docker commands, download datasets, etc...
-
 ## Training
 
-To train the model(s) in the paper, run this command:
+Trained models are saved under the following directories:
 
+- CIFAR-100/Utils/model_distillation_pth
+- CIFAR-100/Utils/SDD_model_pth
+
+Please configure paths accordingly before running training.
+For CIFAR-100:
 ```train
-python train.py --input-data <path_to_data> --alpha 10 --beta 20
+python CIFAR-100/Utils/distillation_train.py --selected_student 3 --selected_teacher 1 --selected_distiller 2
 ```
 
->📋  Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
+For ImageNet:
+python ImageNet/Utils/distillation_train.py --selected_distiller 0
+
 
 ## Evaluation
 
-To evaluate my model on ImageNet, run:
+To evaluate my model on CIFAR-100, run:
 
 ```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
+python test.py
 ```
-
->📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
-
-## Pre-trained Models
-
-You can download pretrained models here:
-
-- [My awesome model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
-
->📋  Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
 
 ## Results
 
@@ -68,6 +85,6 @@ Our model achieves the following performance on :
 | **Ours**   | **71.34**| **74.26** | **77.21**  | **76.42**    | **75.56**    | **74.10** |
 
 
-## Contributing
+## Acknowledgement
 
->📋  Pick a licence and describe how to contribute to your code repository. 
+We would like to thank the contributors of MDistiller for their excellent work, which served as the foundation for our implementation.

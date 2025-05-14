@@ -11,14 +11,7 @@ import time
 import sys
 from os import path
 import argparse
-import habana_frameworks.torch.core as htcore
-import habana_frameworks.torch.utils.debug as htdebug
-device = torch.device("hpu")
-print(device)
-num_hpu = htcore.hpu.device_count()
-print(f"Available HPU count: {num_hpu}")
-current_hpu = torch.hpu.current_device()
-print(f"Current HPU: {current_hpu}")
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 if __package__ is None:
     sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))

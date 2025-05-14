@@ -8,6 +8,7 @@ import copy
 from tqdm import tqdm
 from datetime import datetime
 import time
+import argparse
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -267,5 +268,14 @@ if __name__ == "__main__":
     torch.cuda.manual_seed_all(seed)   
     print(f"device : {device}")
     
-
-    main(selected_student=7, selected_teacher=5, selected_distiller=0)
+    parser = argparse.ArgumentParser(description="Run KD")
+    parser.add_argument("--selected_student", type=int, default=0, help="Index of the student model")
+    parser.add_argument("--selected_teacher", type=int, default=0, help="Index of the teacher model")
+    parser.add_argument("--selected_distiller", type=int, default=0, help="Index of the distillation method")
+    args = parser.parse_args()
+    
+    main(
+        selected_student=args.selected_student,
+        selected_teacher=args.selected_teacher,
+        selected_distiller=args.selected_distiller
+    )

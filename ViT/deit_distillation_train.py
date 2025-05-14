@@ -1,7 +1,3 @@
-'''
-1. 기본 ViT를 가지고, Soft Distill, Hard Distill 수행
-2. DeiT를 가지고 Hard Distill 수행
-'''
 import os
 import torch
 import torch.nn as nn 
@@ -16,13 +12,12 @@ import sys
 from os import path
 import argparse
 import timm
-import habana_frameworks.torch.core as htcore
-import habana_frameworks.torch.utils.debug as htdebug
 from timm.loss import LabelSmoothingCrossEntropy, SoftTargetCrossEntropy
 from torch.optim.lr_scheduler import LambdaLR
 import math
 
-device = torch.device("hpu")
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
 seed = 2021
 torch.manual_seed(seed)
 torch.cuda.manual_seed_all(seed)
