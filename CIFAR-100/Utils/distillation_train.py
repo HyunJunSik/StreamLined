@@ -89,12 +89,12 @@ class AugTrainer(object):
             self.distiller.module.get_learnable_parameter(),
             lr=0.1,
             momentum=0.9,
-            weight_decay=4e-5,
+            weight_decay=5e-4,
         )
         return optimizer
     
     def train(self):
-        epoch_length = 250
+        epoch_length = 240
         for epoch in range(epoch_length):
             print(f"Epoch: {epoch + 1} / {epoch_length}")
             logging.info(f"Epoch: {epoch + 1} / {epoch_length}")
