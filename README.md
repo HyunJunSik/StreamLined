@@ -47,9 +47,13 @@ For CIFAR-100:
 ```train
 python CIFAR-100/Utils/distillation_train.py --selected_student 3 --selected_teacher 1 --selected_distiller 2
 ```
-
 For ImageNet:
 python ImageNet/Utils/distillation_train.py --selected_distiller 0
+
+## Test
+
+Test files exist in each dataset's "Utils" folder
+you can evaluate trained model by test.py
 
 ## Results
 
