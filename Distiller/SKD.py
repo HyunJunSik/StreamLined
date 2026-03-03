@@ -45,6 +45,11 @@ class SKD(Distiller):
     Streamlined Knowledge Distillation, CVPR 2026
     """
     def __init__(self, student, teacher, temp=4, tik=1e-1, ce=0.1, kd=0.9):
+        """
+        The optimal hyper-parameter was used for each model pair.
+        Above settings are default. Please feel free to change these hyper-parameters.
+        Ex) temp:4, tik=1e-1, ce=0.5, ce=0.5 in ResNet8x4 - ResNet32x4
+        """
         super(SKD, self).__init__(student, teacher)
         self.temperature = temp
         self.tik = tik
