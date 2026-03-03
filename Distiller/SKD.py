@@ -17,35 +17,34 @@ def kd_loss(logits_student, logits_teacher, temperature, reduce=True):
 
 def SKD_loss(logits_student, logits_teacher, tik_factor):
     _, C = logits_student.size()
-    # Tikhonov Regularization 1e-4, 1e-5, 1e-6
+    
     lambda_val = tik_factor
-    # Normalize logits
+    
     logits_student = F.normalize(logits_student, p=2, dim=1)
     logits_teacher = F.normalize(logits_teacher, p=2, dim=1)
 
-    # Compute Gram Matrix
+   
     student_matrix = torch.mm(logits_student, logits_student.T) / (C)
     teacher_matrix = torch.mm(logits_teacher, logits_teacher.T) / (C)
     
     diff = student_matrix - teacher_matrix
-    diff = diff.view(diff.size(0), -1)  # Flatten along feature dimensions
+    diff = diff.view(diff.size(0), -1) 
 
-    # Compute covariance matrix with Tikhonov regularization
     cov_matrix = torch.cov(diff.T) + lambda_val * torch.eye(diff.size(1), device=diff.device)
     
-    L = torch.linalg.cholesky(cov_matrix)  # O(d^2)
-    cov_matrix_inv = torch.cholesky_inverse(L)  # O(d^2)
+    L = torch.linalg.cholesky(cov_matrix)  
+    cov_matrix_inv = torch.cholesky_inverse(L) 
     
-    # Compute Mahalanobis distance loss
+    
     mahalanobis_dist = torch.einsum('bi,ij,bj->b', diff, cov_matrix_inv, diff)
-    return torch.sqrt(mahalanobis_dist).mean()  # Mean over batch
+    return torch.sqrt(mahalanobis_dist).mean() 
 
 
 class SKD(Distiller):
-    '''
-    Streamlined Knowledge Distillation 2025
-    '''
-    def __init__(self, student, teacher, temp=4, tik=1e-1, ce=0.5, kd=0.5):
+    """
+    Streamlined Knowledge Distillation, CVPR 2026
+    """
+    def __init__(self, student, teacher, temp=4, tik=1e-1, ce=0.1, kd=0.9):
         super(SKD, self).__init__(student, teacher)
         self.temperature = temp
         self.tik = tik
