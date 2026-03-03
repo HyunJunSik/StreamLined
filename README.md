@@ -1,5 +1,7 @@
 # Streamlined Knowledge Distillation
 
+## CVPR 2026 Accepted! 뿌슝빠쓩~ 
+
 This repository is the official implementation of [Streamlined Knowledge Distillation]
 
 ![propose](https://github.com/user-attachments/assets/2d9501d4-81a2-44bc-b0bd-ee74b1e9b255)
