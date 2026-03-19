@@ -9,6 +9,9 @@ This repository is the official implementation of [Streamlined Knowledge Distill
 We refactored our code based on [MDistiller](https://github.com/megvii-research/mdistiller).
 While the internal structure (e.g., the mdistiller folder) may differ from the original repository, the functionality remains consistent.
 
+## Note 
+Since the additional experiments from the rebuttal could not be incorporated into the main paper, please refer to `extra_experiments.md` for the detailed results and analysis.
+
 ## Directory Setup
 Before training, please create the following directories under the CIFAR-100/Utils folder
 ```
